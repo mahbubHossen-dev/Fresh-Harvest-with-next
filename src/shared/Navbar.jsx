@@ -6,20 +6,18 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { FaEye, FaEyeSlash, FaHeart } from "react-icons/fa6";
 import { CiShoppingCart } from "react-icons/ci";
 import { useEffect, useState } from "react";
-import Image from "next/image";
-// import bannerImage from "@/assets/logo.png";
+
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Checkbox } from "@/components/ui/checkbox";
+} from "../components/ui/dialog";
+import { Checkbox } from "../components/ui/checkbox";
 
 const Navbar = () => {
   const pathName = usePathname();
-  /////////////////////dumy
   const status = "authenticated";
 
   const [navBg, setNavBg] = useState(false);
@@ -102,19 +100,19 @@ const Navbar = () => {
           {/* right content */}
           <div className="flex items-center gap-3">
             <div className=" cursor-pointer p-0.5">
-              <p className="hidden lg:flex items-center gap-2">
+              <p className="hidden lg:flex items-center gap-2 text-[#176D38]">
                 <FaHeart /> Favorites
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <Link href="/card" className="relative">
-                <CiShoppingCart size={25} />
+              <Link href="/card" className="relative ">
+                <CiShoppingCart className="text-black" size={25} />
                 <sup className="absolute left-4 -top-1 w-4 h-4 rounded-full bg-red-500 flex justify-center items-center text-sm p-1 text-white">
                   0
                 </sup>
               </Link>{" "}
-              <p className="hidden lg:flex">Cart</p>
-            </div>
+              <p className="hidden lg:flex text-black">Cart</p>
+            </div>3
             {/* modal start from here  */}
             <div className="hidden lg:flex">
               {status !== "authenticated" ? (
@@ -122,10 +120,10 @@ const Navbar = () => {
                   Logout
                 </button>
               ) : (
-                <div className="flex gap-2">
+                <div className="flex gap-2 text-black">
                   <Dialog>
                     <DialogTrigger asChild>
-                      <button className="font-semibold cursor-pointer py-1 px-4 rounded-4xl">
+                      <button className="font-semibold cursor-pointer py-1 px-4 rounded-4xl text-black">
                         Sign In
                       </button>
                     </DialogTrigger>

@@ -4,8 +4,8 @@ import React, { useState } from "react";
 export default function ReviewComponent() {
   const [toggle, setToggle] = useState<string>("Des");
   return (
-    <section className="space-y-6 sm:space-y-8 lg:space-y-10">
-      <div className="flex items-center gap-5">
+    <section className="w-full px-5 lg:px-8 xl:px-[8%] space-y-6 sm:space-y-8 lg:space-y-10">
+      <div className="flex items-center gap-5 mt-4">
         <button
           onClick={() => setToggle("Des")}
           className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-xl ${

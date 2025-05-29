@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import React, { useState } from "react";
 import { FaHeart } from "react-icons/fa";
@@ -24,10 +25,10 @@ export default function ProductDetails() {
     }
   };
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-20">
+    <div className="w-full px-5 lg:px-8 xl:px-[8%] grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-20">
       <figure className="w-ful">
         <Image
-          src="/assets/coconut.png"
+          src="/coco.PNG"
           width={500}
           height={500}
           alt="Picture of coconut"

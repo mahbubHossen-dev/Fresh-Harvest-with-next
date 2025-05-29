@@ -1,12 +1,8 @@
 
-// import Image from "next/image";
-
-import Footer from "@/shared/Footer";
-import About from "@/components/homeComponents/About";
-import SpecialOffer from "@/components/homeComponents/SpecialOffer";
-import Testimonial from "@/components/homeComponents/Testimonial";
-import BlogSection from "@/components/homeComponents/BlogSection";
-import FreshProductComponent from "@/components/homeComponents/FreshProductComponent";
+import SpecialOffer from "../components/homeComponents/SpecialOffer";
+import Testimonial from '../components/homeComponents/Testimonial'
+import FreshProductComponent from "../components/homeComponents/FreshProductComponent";
+import AboutUs from "./aboutUs/page";
 
 
 export default function Home() {
@@ -14,14 +10,13 @@ export default function Home() {
     <div className="">
       <div>
         <FreshProductComponent />
-        <About />
+        <AboutUs />
         <SpecialOffer />
 
         <Testimonial />
 
-        <BlogSection />
+        {/* <BlogSection /> */}
 
-        <Footer />
       </div>
     </div>
   );

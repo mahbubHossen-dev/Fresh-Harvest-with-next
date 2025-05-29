@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 export default function RelatedProducts() {
   return (
-    <section>
+    <section className="w-full px-5 lg:px-8 xl:px-[8%]">
       {/* Header */}
       <div className="text-center space-y-4 lg:space-y-5">
         <button className="text-[14px] sm:text-xl bg-[#749B3F1A] rounded-lg lg:rounded-xl font-semibold text-greenText px-3 py-1 ">
@@ -22,7 +22,7 @@ export default function RelatedProducts() {
         <div className="p-4 rounded-2xl shadow-xl space-y-4">
           <figure className="bg-[#F4F6F6] rounded-2xl flex items-center justify-center">
             <Image
-              src="/assets/kiwi.png"
+              src="/relate1.PNG"
               width={200}
               height={200}
               className="max-sm:w-[140px] max-sm:h-[140px] max-lg:w-[200px] max-lg:h-[200px] max-2xl:w-[200px] max-2xl:h-[200px] py-5"
@@ -41,7 +41,7 @@ export default function RelatedProducts() {
         <div className="p-4 rounded-2xl shadow-xl space-y-4">
           <figure className="bg-[#F4F6F6] rounded-2xl flex items-center justify-center">
             <Image
-              src="/assets/kiwi.png"
+              src="/relate2.PNG"
               width={200}
               height={200}
               className="max-sm:w-[140px] max-sm:h-[140px] max-lg:w-[200px] max-lg:h-[200px] max-2xl:w-[200px] max-2xl:h-[200px] py-5"
@@ -60,7 +60,7 @@ export default function RelatedProducts() {
         <div className="p-4 rounded-2xl shadow-xl space-y-4">
           <figure className="bg-[#F4F6F6] rounded-2xl flex items-center justify-center">
             <Image
-              src="/assets/kiwi.png"
+              src="/relate3.PNG"
               width={200}
               height={200}
               className="max-sm:w-[140px] max-sm:h-[140px] max-lg:w-[200px] max-lg:h-[200px] max-2xl:w-[200px] max-2xl:h-[200px] py-5"
@@ -79,7 +79,7 @@ export default function RelatedProducts() {
         <div className="p-4 rounded-2xl shadow-xl space-y-4">
           <figure className="bg-[#F4F6F6] rounded-2xl flex items-center justify-center">
             <Image
-              src="/assets/kiwi.png"
+              src="/relate4.PNG"
               width={200}
               height={200}
               className="max-sm:w-[140px] max-sm:h-[140px] max-lg:w-[200px] max-lg:h-[200px] max-2xl:w-[200px] max-2xl:h-[200px] py-5"

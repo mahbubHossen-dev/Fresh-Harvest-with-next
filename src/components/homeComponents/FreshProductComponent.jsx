@@ -57,12 +57,7 @@ export default function FreshProductComponent() {
       {/* Products */}
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {products?.slice(1, 9)?.map((product, index) => (
-          <Link href={
-            {
-                pathname: '/blog',
-                query: { id: product?.id }
-            }
-          } key={index} className="p-4 rounded-2xl shadow-xl space-y-4">
+          <div key={index} className="p-4 rounded-2xl shadow-xl space-y-4">
             <figure className="bg-[#F4F6F6] rounded-2xl flex items-center justify-center">
               <Image
                 src={product?.images[0]}
@@ -81,7 +76,7 @@ export default function FreshProductComponent() {
                 Add to cart
               </button>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
 
