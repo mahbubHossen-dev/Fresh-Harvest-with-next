@@ -5,19 +5,19 @@ import mahbubImage from '../../../public/mahbub.png'
 import Image from 'next/image';
 const BlogSection = () => {
 
-    const getProducts =async () =>{
-        try {
-            const res =await fetch('https://code-commando.com/api/v1/products')
-            const data =await res.json()
-            console.log(data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    // const getProducts =async () =>{
+    //     try {
+    //         const res =await fetch('https://code-commando.com/api/v1/products')
+    //         const data =await res.json()
+    //         console.log(data)
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
 
-    useEffect(() => {
-        getProducts()
-    }, [])
+    // useEffect(() => {
+    //     getProducts()
+    // }, [])
 
     return (
         <div className='max-w-[1213px] mx-auto container mt-24 p-4 md:p-0'>
