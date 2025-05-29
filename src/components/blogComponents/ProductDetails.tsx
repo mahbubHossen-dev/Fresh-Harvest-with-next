@@ -1,36 +1,33 @@
-'use client';
-import Image from 'next/image';
-import React, { useState } from 'react';
-import { FaHeart } from 'react-icons/fa';
-import { MdShoppingCart } from 'react-icons/md';
-import { Rating } from 'react-simple-star-rating';
+import Image from "next/image";
+import React, { useState } from "react";
+import { FaHeart } from "react-icons/fa";
+import { MdShoppingCart } from "react-icons/md";
+import { Rating } from "react-simple-star-rating";
 
-export default function ProductDetails({ product }) {
-  const { images } = product || {}; // Fallback to empty object if product is undefined
-  const [quantity, setQuantity] = useState(1);
-  const rating = 5;
-
-  if (!product) {
-    return <p>Loading...</p>;
+export default function ProductDetails() {
+  const [quantity, setQuantity] = useState<number>(1);
+  {
+    /* TODO: make it dynamic rating */
   }
+  // const [rating, setRating] = useState<number>(5);
+  const rating: number = 5;
+  // const handleRating = (rate: number) => {
+  //   setRating(rate);
+  // };
 
   const handleIncrease = () => {
     setQuantity((prev) => prev + 1);
   };
-
   const handleDecrease = () => {
     if (quantity > 1) {
       setQuantity((prev) => prev - 1);
     }
   };
-
-  const imageSrc = images && Array.isArray(images) && images.length > 0 ? images[0] : '/fallback-image.jpg';
-
   return (
     <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-20">
-      <figure className="w-full">
+      <figure className="w-ful">
         <Image
-          src={imageSrc}
+          src="/assets/coconut.png"
           width={500}
           height={500}
           alt="Picture of coconut"
@@ -39,18 +36,18 @@ export default function ProductDetails({ product }) {
       </figure>
       <div className="space-y-10 font-rubik flex flex-col justify-between py-5">
         <div className="max-sm:space-y-6 max-lg:space-y-8 max-2xl:space-y-10 2xl:space-y-10">
-          <button className="text-[14px] sm:text-xl bg-[#749B3F1A] rounded-xl font-medium text-greenText px-3 py-1">
+          <button className="text-[14px] sm:text-xl bg-[#749B3F1A] rounded-xl font-medium text-greenText px-3 py-1 ">
             Fruits
           </button>
-          <h2 className="text-[#212337] text-3xl sm:text-5xl font-medium">
-            {product.productName || 'Product Name'}
+          <h2 className="text-[#212337] text-3xl sm:text-5xl font-medium ">
+            Coconut
           </h2>
 
           <div className="flex items-center gap-5">
             <Rating initialValue={rating} size={20} />
             <p className="font-medium text-[18px]">
-              {rating.toFixed(1)}{' '}
-              <span className="text-[12px]">(1 review)</span>
+              {rating.toFixed(1)}{" "}
+              <span className="text-[12px]">(1 review)</span>{" "}
             </p>
           </div>
 
@@ -58,10 +55,15 @@ export default function ProductDetails({ product }) {
             $6.3/kg
           </h4>
           <p className="text-[#4A4A52] text-[18px] text-justify">
-            {product.description || 'No description available'}
+            From our farm directly to your door, our fresh coconuts are
+            harvested at the peak of ripeness, offering you a sweet, hydrating
+            treat full of flavor. Packed with natural nutrients, coconut is
+            perfect for a variety of culinary uses, from smoothies to savory
+            dishes, or even for a refreshing drink straight from the shell.
           </p>
         </div>
         <div className="max-sm:space-y-6 max-lg:space-y-8 max-2xl:space-y-10 2xl:space-y-10">
+          {/* Quantity */}
           <div className="flex gap-10 items-center">
             <span className="text-xl font-medium text-[#212337]">Quantity</span>
             <div>
@@ -83,7 +85,7 @@ export default function ProductDetails({ product }) {
               <span className="ml-5">/kg</span>
             </div>
           </div>
-
+          {/* Buttons */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <button className="flex items-center justify-center gap-5 px-8 py-4 rounded-lg bg-[#F4F6F6]">
               <FaHeart />

@@ -22,7 +22,7 @@ export default function FreshProductComponent() {
 
   console.log(products)
   return (
-    <section className="space-y-10 lg:space-y-10">
+    <section className="w-full px-5 lg:px-8 xl:px-[8%] space-y-10 lg:space-y-10 pt-24">
       {/* Header */}
       <div className="text-center space-y-4 lg:space-y-5">
         <button className="text-[14px] sm:text-xl bg-[#749B3F1A] rounded-lg lg:rounded-xl font-semibold text-greenText px-3 py-1">

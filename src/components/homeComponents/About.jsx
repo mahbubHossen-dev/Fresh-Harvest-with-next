@@ -7,7 +7,7 @@ export default function About() {
     console.log('about')
   return (
     <div>
-            <div className='max-w-[1213px] mx-auto container '>
+            <div className='w-full px-5 lg:px-8 xl:px-[8%]'>
                 {/* <SectionHeader subheader={'Testimonial'} header={'What Our Customer Say'} description={"Don't just take our word for it—here's what some of our customers have to say about their experience with Fresh Harvest!"} /> */}
                 {/* /Image */}
                 <div className=' grid md:grid-cols-2 items-center space-x-10 p-4 md:p-0'>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const SpecialOffer = () => {
     return (
-        <div className='relative overflow-hidden mt-24'>
+        <div className='w-full px-5 lg:px-8 xl:px-[8%] relative overflow-hidden mt-24 pb-24'>
             {/* Flipped background */}
             <div
                 className="absolute inset-0 -z-10 scale-x-[-1]"
