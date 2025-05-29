@@ -1,27 +1,29 @@
 import React from 'react';
-import mahbubImage from '../../../public/mahbub.png'
+import mahbubImage from '@/assets/fruit_delivery_man.jpg'
 import Image from 'next/image';
+import aboutVegetable from '@/assets/about_vegetable.webp'
 
 export default function About() {
+    console.log('about')
   return (
     <div>
             <div className='max-w-[1213px] mx-auto container '>
                 {/* <SectionHeader subheader={'Testimonial'} header={'What Our Customer Say'} description={"Don't just take our word for it—here's what some of our customers have to say about their experience with Fresh Harvest!"} /> */}
                 {/* /Image */}
-                <div className=' grid md:grid-cols-2 items-center space-x-10 bg-red-600 p-4 md:p-0'>
-                    <div className='relative bg-red-600 mx-auto'>
+                <div className=' grid md:grid-cols-2 items-center space-x-10 p-4 md:p-0'>
+                    <div className='relative mx-auto mb-24 md:mb-0'>
                         <div className='text-center'>
-                            <Image width={50} height={50} className='mx-auto' src={mahbubImage} alt='image' />
+                            <Image width={400} height={400} className='mx-auto' src={mahbubImage} alt='image' />
                         </div>
-                        <div className='px-[7px] py-[4px] md:px-[13px] absolute right-32 bg-[#ddd] bottom-28'> 
+                        <div className='rounded px-[7px] py-[4px] md:px-[13px] absolute right-32 bg-[#f1eeee] bottom-28'> 
                             <h6 className='font-medium'>Fresh Harvest</h6>
                         </div>
 
-                        <div className='px-[7px] py-[4px] md:px-[13px] absolute right-20 bg-red-300 -bottom-8 flex flex-col justify-center items-center space-y-1'>
-                            <h6 className='font-medium'>Image</h6>
+                        <div className='px-[7px] py-[4px] md:px-[13px] absolute right-16 bg-[#f1eeee] -bottom-12 rounded-lg flex flex-col justify-center items-center space-y-1'>
+                            <Image width={80} height={80} className='mx-auto' src={aboutVegetable} alt='image' />
                             <h6 className='font-medium'>Mashrum</h6>
                             <p className='font-medium'>$2.3kg/</p>
-                            <button className='border py-[6px] px-[44px]'>Add to cart</button>
+                            <button className='border py-[6px] px-[34px]'>Add to cart</button>
                         </div>
                     </div>
 
