@@ -1,19 +1,14 @@
-import React from 'react'
-import About from '../Home/components/About'
-import SpecialOffer from '../Home/components/SpecialOffer'
-import Testimonial from '../Home/components/Testimonial'
-import BlogSection from '../Home/components/BlogSection'
+import ProductDetails from "@/components/blogComponents/ProductDetails";
+import RelatedProducts from "@/components/blogComponents/RelatedProducts";
+import ReviewComponent from "@/components/blogComponents/ReviewComponent";
 
-export default function page() {
-  return (
-    <div>
-            <About />
 
-            <SpecialOffer/>
-
-            <Testimonial />
-
-            <BlogSection />
+export default function BlogPage() {
+    return (
+        <div>
+            <ProductDetails />
+            <RelatedProducts />
+            <ReviewComponent />
         </div>
-  )
+    )
 }

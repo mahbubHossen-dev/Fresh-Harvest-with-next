@@ -4,7 +4,7 @@ import mahbubImage from '../../../public/mahbub.png'
 
 const Testimonial = () => {
     return (
-        <div className='max-w-[1213px] mx-auto container mt-24'>
+        <div className='max-w-[1213px] mx-auto container mt-24 p-4 md:p-0'>
             <SectionHeader subheader={'Testimonial'} header={'What Our Customer Say'} description={"Don't just take our word for it—here's what some of our customers have to say about their experience with Fresh Harvest!"} />
 
             <div className='md:flex items-center gap-[83px] pt-4'>

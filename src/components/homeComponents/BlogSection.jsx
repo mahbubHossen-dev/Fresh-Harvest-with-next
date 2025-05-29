@@ -1,10 +1,26 @@
-import React from 'react';
+'use client'
+import React, { useEffect } from 'react';
 import SectionHeader from '../../shared/SectionHeader';
 import mahbubImage from '../../../public/mahbub.png'
 import Image from 'next/image';
 const BlogSection = () => {
+
+    const getProducts =async () =>{
+        try {
+            const res =await fetch('https://code-commando.com/api/v1/products')
+            const data =await res.json()
+            console.log(data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        getProducts()
+    }, [])
+
     return (
-        <div className='max-w-[1213px] mx-auto container mt-24'>
+        <div className='max-w-[1213px] mx-auto container mt-24 p-4 md:p-0'>
             <SectionHeader subheader={'Our Blog'} header={'Fresh Harvest Blog'} description={"Welcome to the Fresh Harvest Blog, your go-to resource for all things related to fresh produce, healthy eating, and culinary inspiration."} />
 
             <div className='md:flex justify-between gap-6 space-y-4 pt-[40px]'>

@@ -42,8 +42,8 @@ const SpecialOffer = () => {
                     </div>
                 </div>
 
-                <div className='w-fit mt-5'>
-                    <p className='py-[15px] px-[31px] bg-[#176D38]'>CODE : FRESH28</p>
+                <div className=' mt-5'>
+                    <p className='py-[15px] px-[31px] bg-[#176D38] w-fit mx-auto md:mx-0 text-white'>CODE : FRESH28</p>
                 </div>
             </div>
         </div>
