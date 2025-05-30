@@ -1,11 +1,38 @@
 'use client'
 import Image from "next/image";
-import React, { useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { MdShoppingCart } from "react-icons/md";
 import { Rating } from "react-simple-star-rating";
+import { useEffect, useState } from "react";
+export default function ProductDetails({ id }) {
 
-export default function ProductDetails() {
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const res = await fetch(`https://code-commando.com/api/v1/products/${id}`);
+        const data = await res.json();
+
+        if (data.success) {
+          setProduct(data.data);
+        } else {
+          setError("Product not found");
+        }
+      } catch (err) {
+        setError("Failed to fetch product details");
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProduct();
+  }, [id]);
+  console.log(product)
+
   const [quantity, setQuantity] = useState(1);
   {
     /* TODO: make it dynamic rating */
@@ -27,13 +54,17 @@ export default function ProductDetails() {
   return (
     <div className="w-full px-5 lg:px-8 xl:px-[8%] grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-20">
       <figure className="w-ful">
-        <Image
-          src="/coco.PNG"
-          width={500}
-          height={500}
-          alt="Picture of coconut"
-          className="w-full h-full rounded-3xl"
-        />
+        {loading ? (
+          'Loading'
+        ) : (
+          <Image
+            src={product.images[0]}
+            width={500}
+            height={500}
+            alt={product?.productName || "Product image"}
+            className="w-full h-full rounded-3xl"
+          />
+        )}
       </figure>
       <div className="space-y-10 font-rubik flex flex-col justify-between py-5">
         <div className="max-sm:space-y-6 max-lg:space-y-8 max-2xl:space-y-10 2xl:space-y-10">
@@ -41,11 +72,13 @@ export default function ProductDetails() {
             Fruits
           </button>
           <h2 className="text-[#212337] text-3xl sm:text-5xl font-medium ">
-            Coconut
+            {product?.productName}
           </h2>
 
           <div className="flex items-center gap-5">
-            <Rating initialValue={rating} size={20} />
+            <div className="flex">
+              <Rating initialValue={rating} size={20} />
+            </div>
             <p className="font-medium text-[18px]">
               {rating.toFixed(1)}{" "}
               <span className="text-[12px]">(1 review)</span>{" "}
@@ -53,7 +86,7 @@ export default function ProductDetails() {
           </div>
 
           <h4 className="text-[#FF6A1A] font-semibold text-2xl sm:text-3xl">
-            $6.3/kg
+            {product?.price}
           </h4>
           <p className="text-[#4A4A52] text-[18px] text-justify">
             From our farm directly to your door, our fresh coconuts are

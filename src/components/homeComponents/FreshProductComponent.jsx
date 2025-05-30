@@ -4,23 +4,47 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 export default function FreshProductComponent() {
-  const [toggle, setToggle] = useState("All");
-    const [products, setProducts] = useState([])
-  const getProducts = async() => {
+  const [toggle, setToggle] = useState('fruits');
+  const [category, setCategory] = useState([]);
+  const [products, setProducts] = useState([]);
+
+  const getCategories = async () => {
     try {
-        const res = await fetch('https://code-commando.com/api/v1/products')
-        const data = await res.json()
-        setProducts(data.data)
+      const res = await fetch('https://code-commando.com/api/v1/category');
+      const data = await res.json();
+      setCategory(data.data);
     } catch (error) {
-        console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   useEffect(() => {
-    getProducts()
-  }, [])
+    getCategories();
+  }, []);
 
-  console.log(products)
+  const getCategoryId =async () => {
+    const matchedCategory = category.find(item => item.categoryName === toggle);
+    
+      try {
+        const res = await fetch('https://code-commando.com/api/v1/products');
+        const data = await res.json();
+        const filterByCategory = data.data.filter(product => product.categoryId === matchedCategory.id)
+        setProducts(filterByCategory);
+        console.log(filterByCategory)
+      } catch (error) {
+        console.log(error);
+      }
+    
+    console.log(matchedCategory)
+
+  };
+
+  useEffect(() => {
+    if (toggle) {
+      getCategoryId();
+    }
+  }, [toggle, category, setProducts]);
+
   return (
     <section className="w-full px-5 lg:px-8 xl:px-[8%] space-y-10 lg:space-y-10 pt-24">
       {/* Header */}
@@ -38,17 +62,16 @@ export default function FreshProductComponent() {
 
         {/* Filter Buttons */}
         <div className="max-sm:space-x-2 max-lg:space-x-3 max-2xl:space-x-4 2xl:space-x-4">
-          {["All", "Fruits", "Vegetables", "Salad"].map((category) => (
+          {category.map((item, index) => (
             <button
-              key={category}
-              onClick={() => setToggle(category)}
-              className={`px-4 py-2 sm:px-8 sm:py-4 lg:px-6 lg:py-3 rounded-lg text-[12px] sm:text-xl lg:text-xl ${
-                toggle === category
+              key={index}
+              onClick={() => setToggle(item.categoryName)}
+              className={`px-4 py-2 sm:px-8 sm:py-4 lg:px-6 lg:py-3 rounded-lg text-[12px] sm:text-xl lg:text-xl ${toggle === item.categoryName
                   ? "bg-[#749B3F] text-white"
                   : "border border-[#D9D9D9]"
-              }`}
+                }`}
             >
-              {category}
+              {item.categoryName}
             </button>
           ))}
         </div>
@@ -56,8 +79,8 @@ export default function FreshProductComponent() {
 
       {/* Products */}
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {products?.slice(1, 9)?.map((product, index) => (
-          <div key={index} className="p-4 rounded-2xl shadow-xl space-y-4">
+        {products?.map((product, index) => (
+          <Link href={`/product/${product.id}`} key={index} className="p-4 rounded-2xl shadow-xl space-y-4">
             <figure className="bg-[#F4F6F6] rounded-2xl flex items-center justify-center">
               <Image
                 src={product?.images[0]}
@@ -76,7 +99,7 @@ export default function FreshProductComponent() {
                 Add to cart
               </button>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 
