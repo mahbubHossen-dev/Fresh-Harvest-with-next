@@ -67,7 +67,9 @@ const Navbar = () => {
       <div
         className={`${navBg ? "bg-white shadow-xl transition-all ease" : "text-white"
           } h-[12vh] flex items-center fixed z-[999] w-full`}
-      >
+      style={{
+        backgroundImage: "linear-gradient(to right, white 73%, #749B3F 27%)",
+      }}>
         <nav className="flex justify-between items-center w-11/12 mx-auto px-4 md:px-8">
           {/* left logo  */}
           <div className=" px-4 py-0.5 rounded-xs">
@@ -97,8 +99,8 @@ const Navbar = () => {
                 key={link.path}
                 href={link.path}
                 className={`pb-1 text-[#4A4A52] text-4 ${pathName === link.path
-                    ? "font-bold border-b-2 border-0 border-[#749B3F]"
-                    : "font-semibold"
+                  ? "font-bold border-b-2 border-0 border-[#749B3F]"
+                  : "font-semibold"
                   }`}
               >
                 {link.name}
@@ -109,18 +111,18 @@ const Navbar = () => {
           {/* right content */}
           <div className="flex items-center gap-3">
             <div className=" cursor-pointer p-0.5">
-              <p className="hidden lg:flex items-center gap-2 text-[#176D38]">
+              <p className="hidden lg:flex items-center gap-2 text-white">
                 <FaHeart /> Favorites
               </p>
             </div>
             <div className="flex items-center gap-3">
               <Link href="/card" className="relative ">
-                <CiShoppingCart className="text-black" size={25} />
+                <CiShoppingCart className="text-white" size={25} />
                 <sup className="absolute left-4 -top-1 w-4 h-4 rounded-full bg-red-500 flex justify-center items-center text-sm p-1 text-white">
                   0
                 </sup>
               </Link>{" "}
-              <p className="hidden lg:flex text-black">Cart</p>
+              <p className="hidden lg:flex text-white">Cart</p>
             </div>3
             {/* modal start from here  */}
             <div className="hidden lg:flex">
@@ -129,7 +131,9 @@ const Navbar = () => {
                   Logout
                 </button>
               ) : (
-                <LoginModal />
+                <div>
+                  <LoginModal />
+                </div>
               )}
             </div>
             <div className="ml-5">
@@ -157,8 +161,8 @@ const Navbar = () => {
               onClick={handleCloseNave}
               href="/"
               className={`${pathName === "/"
-                  ? "font-bold border-b-2 border-orange-600"
-                  : "font-semibold"
+                ? "font-bold border-b-2 border-orange-600"
+                : "font-semibold"
                 } w-fit`}
             >
               Home
@@ -167,8 +171,8 @@ const Navbar = () => {
               onClick={handleCloseNave}
               href="/shop"
               className={`${pathName === "/shop"
-                  ? "font-bold border-b-2 border-orange-600"
-                  : "font-semibold"
+                ? "font-bold border-b-2 border-orange-600"
+                : "font-semibold"
                 } w-fit`}
             >
               Shop
@@ -177,8 +181,8 @@ const Navbar = () => {
               onClick={handleCloseNave}
               href="/aboutUs"
               className={`${pathName === "/aboutUs"
-                  ? "font-bold border-b-2 border-orange-600"
-                  : "font-semibold"
+                ? "font-bold border-b-2 border-orange-600"
+                : "font-semibold"
                 } w-fit`}
             >
               About Us
@@ -187,8 +191,8 @@ const Navbar = () => {
               onClick={handleCloseNave}
               href="/blog"
               className={`${pathName === "/blog"
-                  ? "font-bold border-b-2 border-orange-600"
-                  : "font-semibold"
+                ? "font-bold border-b-2 border-orange-600"
+                : "font-semibold"
                 } w-fit`}
             >
               Blog

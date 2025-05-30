@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react'
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
 } from "../components/ui/dialog";
 
 import { Checkbox } from "../components/ui/checkbox";
@@ -15,7 +15,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 export default function RegisterModal() {
     const [showPassword, setShowPassword] = useState(false);
-    const {createUser, setUser, updateUserProfile} = useContext(AuthContext)
+    const { createUser, setUser, updateUserProfile } = useContext(AuthContext)
     const handleRegister = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -23,9 +23,9 @@ export default function RegisterModal() {
         const email = form.email.value
         const password = form.password.value
 
-        
 
-         createUser(email, password)
+
+        createUser(email, password)
             .then(result => {
                 // console.log(result.user)
                 setUser(result.user)
@@ -108,7 +108,10 @@ export default function RegisterModal() {
                             Register
                         </button>
                     </form>
-                    <p>Already have an acount? Please <LoginModal /></p>
+                    <div className='flex items-center'>
+                        <p>Already have an account? Please </p>
+                        <LoginModal />
+                    </div>
                 </DialogContent>
             </Dialog>
         </div>

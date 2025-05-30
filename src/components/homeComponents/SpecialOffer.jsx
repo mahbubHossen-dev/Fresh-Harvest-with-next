@@ -43,7 +43,7 @@ const SpecialOffer = () => {
                 </div>
 
                 <div className=' mt-5'>
-                    <p className='py-[15px] px-[31px] bg-[#176D38] w-fit mx-auto md:mx-0 text-white'>CODE : FRESH28</p>
+                    <p className='py-[15px] px-[31px] bg-[#176D38] w-fit mx-auto md:mx-0 text-white font-bold text-xl rounded-4xl'>CODE : <span className='text-[#FAC714]'>FRESH28</span></p>
                 </div>
             </div>
         </div>

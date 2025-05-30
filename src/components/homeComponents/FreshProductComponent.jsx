@@ -92,9 +92,9 @@ export default function FreshProductComponent() {
             </figure>
             <div className="text-center space-y-2">
               <h4 className="font-medium text-[#212337] text-xl">
-                {product.name}
+                {product?.productName}
               </h4>
-              <p className="text-[#4A4A52]">{product.price}</p>
+              <p className="text-[#4A4A52]">${product?.price}</p>
               <button className="text-[#212337] font-medium border border-[#D9D9D9] w-full rounded-md py-1 text-xl hover:bg-[#FF6A1A] hover:text-white hover:transition-all">
                 Add to cart
               </button>
