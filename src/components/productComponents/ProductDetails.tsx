@@ -3,9 +3,12 @@ import Image from "next/image";
 import { FaHeart } from "react-icons/fa";
 import { MdShoppingCart } from "react-icons/md";
 import { Rating } from "react-simple-star-rating";
-import { useEffect, useState } from "react";
-export default function ProductDetails({ id }) {
+import { useContext, useEffect, useState } from "react";
+import {AuthContext} from '../../Provider/AuthProvider'
 
+export default function ProductDetails({ id }) {
+  const {mhb} = useContext(AuthContext)
+  console.log(mhb)
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -34,14 +37,9 @@ export default function ProductDetails({ id }) {
   console.log(product)
 
   const [quantity, setQuantity] = useState(1);
-  {
-    /* TODO: make it dynamic rating */
-  }
-  // const [rating, setRating] = useState<number>(5);
+  
   const rating = 5;
-  // const handleRating = (rate: number) => {
-  //   setRating(rate);
-  // };
+  
 
   const handleIncrease = () => {
     setQuantity((prev) => prev + 1);
