@@ -16,7 +16,7 @@ const BlogSection = () => {
         <div className="text-[18px]">
           <div className="relative w-full h-[270px] pb-[15px]">
             <Image
-              src="/pic1.png"
+              src="/pic1.PNG"
               alt="image"
               layout="fill"
               objectFit="cover"
@@ -32,7 +32,7 @@ const BlogSection = () => {
         <div className="text-[18px] ">
           <div className="relative w-full h-[270px] pb-[15px]">
             <Image
-              src="/pic2.png"
+              src="/pic2.PNG"
               alt="image"
               layout="fill"
               objectFit="cover"
@@ -48,7 +48,7 @@ const BlogSection = () => {
         <div className="text-[18px] ">
           <div className="relative w-full h-[270px] pb-[15px]">
             <Image
-              src="/pic3.png"
+              src="/pic3.PNG"
               alt="image"
               layout="fill"
               objectFit="cover"
