@@ -22,19 +22,19 @@ export default function FreshProductComponent() {
     getCategories();
   }, []);
 
-  const getCategoryId =async () => {
+  const getCategoryId = async () => {
     const matchedCategory = category.find(item => item.categoryName === toggle);
-    
-      try {
-        const res = await fetch('https://code-commando.com/api/v1/products');
-        const data = await res.json();
-        const filterByCategory = data.data.filter(product => product.categoryId === matchedCategory.id)
-        setProducts(filterByCategory);
-        console.log(filterByCategory)
-      } catch (error) {
-        console.log(error);
-      }
-    
+
+    try {
+      const res = await fetch('https://code-commando.com/api/v1/products');
+      const data = await res.json();
+      const filterByCategory = data.data.filter(product => product.categoryId === matchedCategory.id)
+      setProducts(filterByCategory);
+      console.log(filterByCategory)
+    } catch (error) {
+      console.log(error);
+    }
+
     console.log(matchedCategory)
 
   };
@@ -67,8 +67,8 @@ export default function FreshProductComponent() {
               key={index}
               onClick={() => setToggle(item.categoryName)}
               className={`px-4 py-2 sm:px-8 sm:py-4 lg:px-6 lg:py-3 rounded-lg text-[12px] sm:text-xl lg:text-xl ${toggle === item.categoryName
-                  ? "bg-[#749B3F] text-white"
-                  : "border border-[#D9D9D9]"
+                ? "bg-[#749B3F] text-white"
+                : "border border-[#D9D9D9]"
                 }`}
             >
               {item.categoryName}
@@ -82,13 +82,16 @@ export default function FreshProductComponent() {
         {products?.map((product, index) => (
           <Link href={`/product/${product.id}`} key={index} className="p-4 rounded-2xl shadow-xl space-y-4">
             <figure className="bg-[#F4F6F6] rounded-2xl flex items-center justify-center">
-              <Image
-                src={product?.images[0]}
-                width={200}
-                height={200}
-                className="max-sm:w-[140px] max-sm:h-[140px] max-lg:w-[200px] max-lg:h-[200px] max-2xl:w-[200px] max-2xl:h-[200px] py-5"
-                alt="A fruit image"
-              />
+              {
+                product?.images[0] && <Image
+                  src={product?.images[0]}
+                  width={200}
+                  height={200}
+                  className="max-sm:w-[140px] max-sm:h-[140px] max-lg:w-[200px] max-lg:h-[200px] max-2xl:w-[200px] max-2xl:h-[200px] py-5"
+                  alt="A fruit image"
+                />
+              }
+
             </figure>
             <div className="text-center space-y-2">
               <h4 className="font-medium text-[#212337] text-xl">
