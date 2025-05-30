@@ -6,7 +6,7 @@ It is built using Next.js, TypeScript, Tailwind CSS, and Next/Image for optimize
 
 ## 🌟 Live Preview
 
-[👉 Live Demo (Vercel link)](https://fresh-harvest-with-next-kksd6m39q-mahbub-hossens-projects.vercel.app/)
+[👉 Live Demo (Vercel link)](https://fresh-harvest-with-next.vercel.app/)
 
 ## 📸 Homepage Sections Overview
 
