@@ -6,7 +6,7 @@ It is built using Next.js, TypeScript, Tailwind CSS, and Next/Image for optimize
 
 ## 🌟 Live Preview
 
-[👉 Live Demo (Vercel link)](https://fresh-harvest-with-next.vercel.app/)
+[👉 Live Demo (Vercel link)](https://fresh-harvest-with-next-bice.vercel.app/)
 
 ## 📸 Homepage Sections Overview
 
@@ -43,6 +43,27 @@ The homepage includes the following sections:
 git clone https://github.com/mahbubHossen-dev/Fresh-Harvest-with-next
 cd fresh-harvest
 npm install
+
+3️⃣ Frontend Environment Setup
+Create a .env.local file and add your Firebase configuration:
+
+REACT_APP_FIREBASE_API_KEY=your-api-key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your-auth-domain
+REACT_APP_FIREBASE_PROJECT_ID=your-project-id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your-storage-bucket
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
+REACT_APP_FIREBASE_APP_ID=your-app-id
+REACT_APP_FIREBASE_MEASUREMENT_ID=your-measurement-id
+4️⃣ Backend Environment Setup
+Create a .env file in the backend folder and add:
+
+NODE_ENV=development
+PORT=YourPort
+DATABASE_URL=YourMongoDBAtlasURL
+BCRYPT_SALT_ROUNDS=YourSaltRound
+JWT_ACCESS_SECRET=YourAccessTokenSecret
+ACCESS_TOKEN_EXPIRATION=YourExpirationTime
+
 npm run dev
 ```
 
