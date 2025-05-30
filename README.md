@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# 🥦 Fresh Harvest – Grocery Delivery Website (Next.js + TypeScript)
 
-First, run the development server:
+Fresh Harvest is a modern and responsive grocery/produce website.  
+It is built using Next.js, TypeScript, Tailwind CSS, and Next/Image for optimized performance.
+
+## 🌟 Live Preview
+
+[👉 Live Demo (Vercel link)](https://fresh-harvest-with-next-kksd6m39q-mahbub-hossens-projects.vercel.app/)
+
+## 📸 Homepage Sections Overview
+
+The homepage includes the following sections:
+
+1. **Banner** – Hero section with headline and CTA
+2. **About** – Introduction to Fresh Harvest
+3. **Product Filter Section** – Filter products by Fruits, Vegetables, Salad
+4. **Special Offer** – Time-limited discount UI
+5. **Testimonial** – Customer reviews
+6. **Blog Section** – Blog cards with tips and recipes
+
+## 🚀 Technologies Used
+
+| Tool              | Description                        |
+|-------------------|------------------------------------|
+| Next.js           | React Framework for SSR & Routing |
+| TypeScript        | Type-safe JavaScript               |
+| Tailwind CSS      | Utility-first CSS framework        |
+| Next/Image        | Optimized image loading            |
+| React Hooks       | `useState`, `useEffect`, etc.      |
+
+## 🧠 Features
+
+- Responsive design (mobile-first)
+- Product filtering (`Fruits`, `Vegetables`, `Salad`)
+- Blog and testimonial cards
+- UI-based special offer countdown
+- Optimized image loading with Next/Image
+
+## 🔧 Installation & Run Locally
 
 ```bash
+git clone https://github.com/mahbubHossen-dev/Fresh-Harvest-with-next
+cd fresh-harvest
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+fresh-harvest/
+├── components/
+│   └── homeComponents/
+│       ├── About.tsx
+│       ├── Banner.tsx
+│       ├── BlogSection.tsx
+│       ├── FreshProductComponent.tsx
+│       ├── SpecialOffer.tsx
+│       └── Testimonial.tsx
+├── public/
+├── pages/
+│   └── index.tsx
+├── styles/
+├── tsconfig.json
+├── tailwind.config.ts
+├── next.config.js
+└── package.json
+```
 
-## Learn More
+## 🐞 Known Issues
 
-To learn more about Next.js, take a look at the following resources:
+- Product filter UI works, but filtering logic is not applied yet
+- Typo: "Out Products" → should be "Our Products"
+- Blog images use deprecated layout prop
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📌 Future Improvements
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Fix product filter logic
+- Implement dynamic countdown timer
+- Add footer and contact form
+- Add product/blog details pages
 
-## Deploy on Vercel
+## 🙋‍♂️ Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Mahbub Hossen**  
+👉 [GitHub](https://github.com/mahbubHossen-dev)

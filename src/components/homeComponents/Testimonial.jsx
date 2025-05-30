@@ -1,6 +1,5 @@
 import React from 'react';
 import SectionHeader from '../../shared/SectionHeader';
-import mahbubImage from '../../../public/mahbub.png'
 import Image from 'next/image';
 
 const Testimonial = () => {

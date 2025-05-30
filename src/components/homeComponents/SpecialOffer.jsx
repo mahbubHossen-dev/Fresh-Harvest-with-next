@@ -33,7 +33,7 @@ const SpecialOffer = () => {
                         <p>Hours</p>
                     </div>
                     <div className='p-4 bg-[#ddd] text-black'>
-                        <h4>54min</h4>
+                        <h4>54</h4>
                         <p>Min</p>
                     </div>
                     <div className='p-4 bg-[#ddd] text-black'>

@@ -49,7 +49,7 @@ const Banner = () => {
                   </button>
                 </div>
                 <Image
-                  src="/assets/saladPlate.png"
+                  src="/saladPlate.jpg"
                   alt="Salad Plate"
                   width={100}
                   height={100}
@@ -62,11 +62,11 @@ const Banner = () => {
           {/* Right Image */}
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end items-end">
             <Image
-              src="/assets/girl.jpg"
+              src="/banner_Image.jpg"
               alt="Banner Girl"
-              width={450}
-              height={450}
-              className="w-full max-w-[450px] h-auto"
+              width={400}
+              height={400}
+              className="w-full max-w-[400px] h -auto rounded-xl"
             />
           </div>
         </div>

@@ -6,12 +6,12 @@ import { MdShoppingCart } from "react-icons/md";
 import { Rating } from "react-simple-star-rating";
 
 export default function ProductDetails() {
-  const [quantity, setQuantity] = useState<number>(1);
+  const [quantity, setQuantity] = useState(1);
   {
     /* TODO: make it dynamic rating */
   }
   // const [rating, setRating] = useState<number>(5);
-  const rating: number = 5;
+  const rating = 5;
   // const handleRating = (rate: number) => {
   //   setRating(rate);
   // };

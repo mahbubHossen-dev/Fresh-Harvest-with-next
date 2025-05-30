@@ -1,10 +1,9 @@
 import React from 'react';
-import mahbubImage from '@/assets/fruit_delivery_man.jpg'
 import Image from 'next/image';
-import aboutVegetable from '@/assets/about_vegetable.webp'
+import aboutVegetable from '../../../public/about_vegetable.webp'
+import customer from '../../../public/customer.jpg'
 
 export default function About() {
-    console.log('about')
   return (
     <div>
             <div className='w-full px-5 lg:px-8 xl:px-[8%]'>
@@ -13,7 +12,7 @@ export default function About() {
                 <div className=' grid md:grid-cols-2 items-center space-x-10 p-4 md:p-0'>
                     <div className='relative mx-auto mb-24 md:mb-0'>
                         <div className='text-center'>
-                            <Image width={400} height={400} className='mx-auto' src={mahbubImage} alt='image' />
+                            <Image width={400} height={400} className='mx-auto' src={customer} alt='image' />
                         </div>
                         <div className='rounded px-[7px] py-[4px] md:px-[13px] absolute right-32 bg-[#f1eeee] bottom-28'> 
                             <h6 className='font-medium'>Fresh Harvest</h6>
